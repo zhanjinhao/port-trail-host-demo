@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.addenda.porttrail.hostdemo.mapper.WorkflowMapper">
+  <resultMap type="cn.addenda.porttrail.hostdemo.entity.Workflow" id="WorkflowMap">
+    <id property="id" column="id" jdbcType="BIGINT"/>
+  </resultMap>
+
+  <sql id="allColumn">
+    `id`, `node_type`, `dependent_node`, `node_state`, `parent_node`,
+    `initiation_type`, `initiator`, `initiation_dt`, `candidate`, `handler`, `handle_time`,
+    `node_title`, `node_description`, `biz_id`, `uuid`, `group_id`, `source_node_id`
+  </sql>
+
+  <sql id="setCondition">
+    <if test="nodeType != null">
+      `node_type` = #{nodeType,jdbcType=VARCHAR},
+    </if>
+    `dependent_node` = #{dependentNode,jdbcType=BIGINT},
+    <if test="nodeState != null">
+      `node_state` = #{nodeState,jdbcType=VARCHAR},
+    </if>
+    <if test="parentNode != null">
+      `parent_node` = #{parentNode,jdbcType=BIGINT},
+    </if>
+    <if test="initiationType != null">
+      `initiation_type` = #{initiationType,jdbcType=VARCHAR},
+    </if>
+    <if test="initiator != null">
+      `initiator` = #{initiator,jdbcType=VARCHAR},
+    </if>
+    <if test="initiationDt != null">
+      `initiation_dt` = #{initiationDt,jdbcType=TIMESTAMP},
+    </if>
+    <if test="candidate != null">
+      `candidate` = #{candidate,jdbcType=VARCHAR},
+    </if>
+    <if test="handler != null">
+      `handler` = #{handler,jdbcType=VARCHAR},
+    </if>
+    <if test="handleTime != null">
+      `handle_time` = #{handleTime,jdbcType=TIMESTAMP},
+    </if>
+    <if test="nodeTitle != null">
+      `node_title` = #{nodeTitle,jdbcType=VARCHAR},
+    </if>
+    <if test="nodeDescription != null">
+      `node_description` = #{nodeDescription,jdbcType=VARCHAR},
+    </if>
+    <if test="bizId != null">
+      `biz_id` = #{bizId,jdbcType=VARCHAR},
+    </if>
+    <if test="uuid != null">
+      `uuid` = #{uuid,jdbcType=VARCHAR},
+    </if>
+    <if test="groupId != null">
+      `group_id` = #{groupId,jdbcType=VARCHAR},
+    </if>
+    <if test="sourceNodeId != null">
+      `source_node_id` = #{sourceNodeId,jdbcType=BIGINT},
+    </if>
+  </sql>
+
+  <sql id="queryCondition">
+    <if test="id != null">
+      and `id` = #{id,jdbcType=BIGINT}
+    </if>
+    <if test="nodeType != null">
+      and `node_type` = #{nodeType,jdbcType=VARCHAR}
+    </if>
+    <if test="dependentNode != null">
+      and `dependent_node` = #{dependentNode,jdbcType=BIGINT}
+    </if>
+    <if test="nodeState != null">
+      and `node_state` = #{nodeState,jdbcType=VARCHAR}
+    </if>
+    <if test="parentNode != null">
+      and `parent_node` = #{parentNode,jdbcType=BIGINT}
+    </if>
+    <if test="initiationType != null">
+      and `initiation_type` = #{initiationType,jdbcType=VARCHAR}
+    </if>
+    <if test="initiator != null">
+      and `initiator` = #{initiator,jdbcType=VARCHAR}
+    </if>
+    <if test="initiationDt != null">
+      and `initiation_dt` = #{initiationDt,jdbcType=TIMESTAMP}
+    </if>
+    <if test="candidate != null">
+      and `candidate` = #{candidate,jdbcType=VARCHAR}
+    </if>
+    <if test="handler != null">
+      and `handler` = #{handler,jdbcType=VARCHAR}
+    </if>
+    <if test="handleTime != null">
+      and `handle_time` = #{handleTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="nodeTitle != null">
+      and `node_title` = #{nodeTitle,jdbcType=VARCHAR}
+    </if>
+    <if test="nodeDescription != null">
+      and `node_description` = #{nodeDescription,jdbcType=VARCHAR}
+    </if>
+    <if test="bizId != null">
+      and `biz_id` = #{bizId,jdbcType=VARCHAR}
+    </if>
+    <if test="uuid != null">
+      and `uuid` = #{uuid,jdbcType=VARCHAR}
+    </if>
+    <if test="groupId != null">
+      and `group_id` = #{groupId,jdbcType=BIGINT}
+    </if>
+    <if test="sourceNodeId != null">
+      and `source_node_id` = #{sourceNodeId,jdbcType=BIGINT}
+    </if>
+  </sql>
+
+  <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+    insert into t_workflow
+    <trim prefix="set" suffixOverrides=",">
+      id = #{id,jdbcType=BIGINT},
+      <include refid="setCondition"/>
+    </trim>
+  </insert>
+
+  <update id="updateById">
+    update t_workflow
+    <trim prefix="set" suffixOverrides=",">
+      <include refid="setCondition"/>
+    </trim>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <delete id="deleteById">
+    delete
+    from t_workflow
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <delete id="deleteByEntity">
+    delete from t_workflow
+    <trim prefix="where" prefixOverrides="and">
+      <include refid="queryCondition"/>
+    </trim>
+  </delete>
+
+  <select id="queryByEntity" resultMap="WorkflowMap">
+    select
+    <include refid="allColumn"/>
+    from t_workflow
+    <trim prefix="where" prefixOverrides="and">
+      <include refid="queryCondition"/>
+    </trim>
+  </select>
+
+  <select id="queryAllByEntity" resultMap="WorkflowMap">
+    select *
+    from t_workflow
+    <trim prefix="where" prefixOverrides="and">
+      <include refid="queryCondition"/>
+    </trim>
+  </select>
+
+  <select id="queryById" resultMap="WorkflowMap">
+    select
+    <include refid="allColumn"/>
+    from t_workflow
+    <trim prefix="where" prefixOverrides="and">
+      id = #{id,jdbcType=BIGINT}
+    </trim>
+  </select>
+
+  <select id="queryByIdList" resultMap="WorkflowMap">
+    select
+    <include refid="allColumn"/>
+    from t_workflow
+    <trim prefix="where" prefixOverrides="and">
+      id in
+      <foreach collection="idList" open="(" close=")" item="id" separator=",">
+        #{id,jdbcType=BIGINT}
+      </foreach>
+    </trim>
+  </select>
+
+  <select id="countByEntity" resultType="java.lang.Long">
+    select count(*) from t_workflow
+    <trim prefix="where" prefixOverrides="and">
+      <include refid="queryCondition"/>
+    </trim>
+  </select>
+</mapper>

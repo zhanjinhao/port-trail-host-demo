@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.addenda</groupId>
+  <artifactId>port-trail-host-demo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <junit.version>5.11.4</junit.version>
+    <lombok.version>1.18.36</lombok.version>
+    <slf4j.version>1.7.36</slf4j.version>
+    <log4j.version>2.17.2</log4j.version>
+
+    <component.version>2.0-SNAPSHOT</component.version>
+    <mysql.version>8.0.31</mysql.version>
+
+    <!-- mybatis framework start -->
+    <mybatis.version>3.5.16</mybatis.version>
+    <mybatis-spring.version>2.0.7</mybatis-spring.version>
+    <mybatis-spring-boot-starter.version>2.2.1</mybatis-spring-boot-starter.version>
+    <pagehelper.version>6.1.1</pagehelper.version>
+
+    <springboot.version>2.6.5</springboot.version>
+    <xxljob.version>2.2.0</xxljob.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
+      <!-- Log4j2 Starter -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jetty</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
+
+
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+
+      <!-- Log4j2 适配到slf4j -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+      <!-- Log4j2 核心组件 -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+      <!-- Log4j2 核心API -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+
+      <!--mybatis-->
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>${mybatis-spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis-spring-boot-starter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper</artifactId>
+        <version>${pagehelper.version}</version>
+      </dependency>
+
+      <!--MySQL依赖-->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+      </dependency>
+
+      <!-- 自定义组件 -->
+      <dependency>
+        <groupId>cn.addenda</groupId>
+        <artifactId>mybatis-basemodel-simple</artifactId>
+        <version>${component.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.addenda</groupId>
+        <artifactId>base-component</artifactId>
+        <version>${component.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.addenda</groupId>
+        <artifactId>transaction-component</artifactId>
+        <version>${component.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.addenda</groupId>
+        <artifactId>spring-component</artifactId>
+        <version>${component.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.addenda</groupId>
+        <artifactId>mybatis-component</artifactId>
+        <version>${component.version}</version>
+      </dependency>
+
+      <!-- xxl job -->
+      <dependency>
+        <groupId>com.xuxueli</groupId>
+        <artifactId>xxl-job-core</artifactId>
+        <version>${xxljob.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+<!--        <exclusion>-->
+<!--          <groupId>org.springframework.boot</groupId>-->
+<!--          <artifactId>spring-boot-starter-tomcat</artifactId>-->
+<!--        </exclusion>-->
+      </exclusions>
+    </dependency>
+    <!-- Log4j2 Starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter-jetty</artifactId>-->
+<!--    </dependency>-->
+
+    <!--Mybatis依赖-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+    </dependency>
+
+    <!--MySQL依赖-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+
+    <!-- 自定义组件 -->
+    <dependency>
+      <groupId>cn.addenda</groupId>
+      <artifactId>mybatis-basemodel-simple</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.addenda</groupId>
+      <artifactId>base-component</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.addenda</groupId>
+      <artifactId>transaction-component</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.addenda</groupId>
+      <artifactId>spring-component</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.addenda</groupId>
+      <artifactId>mybatis-component</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.xuxueli</groupId>
+      <artifactId>xxl-job-core</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>
