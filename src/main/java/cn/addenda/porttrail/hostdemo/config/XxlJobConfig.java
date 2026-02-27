@@ -12,9 +12,9 @@ import java.net.URL;
 @Configuration
 public class XxlJobConfig {
 
-  private String adminAddresses = "http://localhost:8080/xxl-job-admin";
+  private String adminAddresses = "http://192.168.10.111:28192/xxl-job-admin";
 
-  private String accessToken = "!@#$%^&*()1234567890";
+  private String accessToken = "@1@3$5^7*9_5058";
 
   private String appname = "port-trail-host-demo";
 

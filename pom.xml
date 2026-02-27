@@ -28,7 +28,7 @@
     <pagehelper.version>6.1.1</pagehelper.version>
 
     <springboot.version>2.6.5</springboot.version>
-    <xxljob.version>2.2.0</xxljob.version>
+    <xxljob.version>2.4.2</xxljob.version>
   </properties>
 
   <dependencyManagement>
