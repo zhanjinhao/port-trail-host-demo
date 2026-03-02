@@ -8,13 +8,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005
- * -javaagent:C:\workspace\project\incubating\port-trail\dist\porttrail-agent.jar
+ * -javaagent:D:\CodeSpace\incubating\port-trail\dist\porttrail-agent.jar
  *
  * @author addenda
  * @since 2022/1/14 15:44
  */
 @EnableTransactionManagement(order = Ordered.LOWEST_PRECEDENCE - 70)
-@MapperScan("cn.addenda.porttrail.hostdemo")
+@MapperScan("cn.addenda.porttrail.hostdemo.mapper")
 @SpringBootApplication
 public class PortTrailHostDemoApplication {
 

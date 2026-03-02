@@ -32,7 +32,7 @@ public class DemoService {
   public void update(String nodeType) {
     log.error("HelloService: classLoader={}", log.getClass().getClassLoader());
 
-//    workflowMapper.queryAllByEntity(Workflow.ofParam());
+    workflowMapper.queryAllByEntity(Workflow.ofParam());
 
     Workflow param = Workflow.ofParam();
     param.setNodeType(nodeType);
