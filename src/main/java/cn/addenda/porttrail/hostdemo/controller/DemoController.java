@@ -7,10 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -19,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 public class DemoController {
@@ -81,10 +79,27 @@ public class DemoController {
   public Map<String, String> testMultipartFormData(@RequestParam("file") MultipartFile file,
                                                    @RequestParam("nodeType") String nodeType) {
     System.out.println("file=" + file.getName() + ",filename=" + file.getOriginalFilename() + ",size=" + file.getSize());
-    // 将文件写入 resources/static 目录
+    // 将文件写入 target 目录
     try {
-      File dest = new File(DemoController.class.getClassLoader().getResource("").toURI().getPath(), file.getOriginalFilename());
-      file.transferTo(dest);
+      File targetDir = new File(DemoController.class.getClassLoader().getResource("").toURI().getPath()).getParentFile();
+      File dest = new File(targetDir, UUID.randomUUID().toString().replace("-", "") + "_" + file.getOriginalFilename());
+      dest.createNewFile();
+      InputStream inputStream = file.getInputStream();
+
+      try (InputStream bufferedIn = new BufferedInputStream(inputStream);
+           OutputStream fileOut = Files.newOutputStream(dest.toPath());
+           BufferedOutputStream bufferedOut = new BufferedOutputStream(fileOut)) {
+
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        while ((bytesRead = bufferedIn.read(buffer)) != -1) {
+          bufferedOut.write(buffer, 0, bytesRead);
+        }
+
+        bufferedOut.flush();
+      } catch (IOException e) {
+        throw e;
+      }
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
