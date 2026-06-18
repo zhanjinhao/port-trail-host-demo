@@ -53,7 +53,7 @@ public class DemoController {
     System.out.println(postParam);
     demoService.update(nodeType);
     Map<String, String> map = new HashMap<>();
-    map.put("testRequestParamAndResponseBody", "testRequestParamAndResponseBody");
+    map.put("testRequestParamAndResponseBody", nodeType);
     return map;
   }
 
@@ -62,11 +62,13 @@ public class DemoController {
    * response: application/json
    */
   @PostMapping(value = "testFormUrlencoded", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-  public Map<String, String> testFormUrlencoded(@RequestParam("nodeType") String nodeType, @RequestParam("f1") String f1) {
+  public Map<String, String> testFormUrlencoded(@RequestParam("nodeType") Integer nodeType, @RequestParam("f1") String f1) {
     executeUpdate();
     System.out.println("f1=" + f1);
-    demoService.update(nodeType);
+    demoService.update("" + nodeType);
     Map<String, String> map = new HashMap<>();
+    map.put("nodeType", String.valueOf(nodeType));
+    map.put("f1", f1);
     map.put("testFormUrlencoded", "testFormUrlencoded");
     return map;
   }
@@ -108,6 +110,9 @@ public class DemoController {
     demoService.update(nodeType);
     Map<String, String> map = new HashMap<>();
     map.put("testMultipartFormDatas", "testMultipartFormData");
+    map.put("file", file.getName());
+    map.put("filename", file.getOriginalFilename());
+    map.put("nodeType", nodeType);
     return map;
   }
 
