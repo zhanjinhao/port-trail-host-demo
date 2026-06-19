@@ -1,6 +1,6 @@
 package cn.addenda.porttrail.hostdemo.controller;
 
-import cn.addenda.porttrail.hostdemo.service.DemoService;
+import cn.addenda.porttrail.hostdemo.service.HttpTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -23,11 +23,11 @@ import java.util.UUID;
 public class HttpTestController {
 
   @Autowired
-  private DemoService demoService;
+  private HttpTestService httpTestService;
 
   @PostMapping("testOnlyRequestParam")
   public Map<String, String> testOnlyRequestParam(@RequestParam("nodeType") String nodeType) {
-    demoService.update(nodeType);
+    httpTestService.update(nodeType);
 
     Map<String, String> map = new HashMap<>();
     map.put("testOnlyRequestParam", nodeType);
@@ -37,7 +37,7 @@ public class HttpTestController {
   @PostMapping("testRequestParamAndResponseBody")
   public Map<String, String> testRequestParamAndResponseBody(@RequestParam("nodeType") String nodeType, @RequestBody Map<String, String> postParam) {
     System.out.println(postParam);
-    demoService.update(nodeType);
+    httpTestService.update(nodeType);
     Map<String, String> map = new HashMap<>();
     map.put("testRequestParamAndResponseBody", nodeType);
     map.putAll(postParam);
@@ -202,7 +202,7 @@ public class HttpTestController {
     }
 
     // 处理文件和文本参数
-    demoService.update(nodeType);
+    httpTestService.update(nodeType);
     Map<String, String> map = new HashMap<>();
     map.put("testMultipartFormDatas", "testMultipartFormData");
     map.put("file", file.getName());
@@ -218,7 +218,7 @@ public class HttpTestController {
   @PostMapping(value = "testFormUrlencoded", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
   public Map<String, String> testFormUrlencoded(@RequestParam("nodeType") Integer nodeType, @RequestParam("f1") String f1) {
     System.out.println("f1=" + f1);
-    demoService.update("" + nodeType);
+    httpTestService.update("" + nodeType);
     Map<String, String> map = new HashMap<>();
     map.put("nodeType", String.valueOf(nodeType));
     map.put("f1", f1);

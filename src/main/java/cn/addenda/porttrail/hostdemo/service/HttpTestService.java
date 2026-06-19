@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class DemoService {
+public class HttpTestService {
 
   @Autowired
   private WorkflowMapper workflowMapper;
