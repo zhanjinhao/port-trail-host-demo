@@ -1,0 +1,312 @@
+{
+  "info": {
+    "name": "port-trail-host-demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "name": "port-trail-host-demo",
+  "item": [
+    {
+      "name": "httpTest-testOnlyRequestParam",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testOnlyRequestParam?nodeType=1",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testOnlyRequestParam",
+          "query": [
+            {
+              "key": "nodeType",
+              "value": "1"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Length",
+            "value": "0",
+            "disabled": false
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=UTF-8",
+            "disabled": false
+          }
+        ],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testRequestParamAndResponseBody",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testRequestParamAndResponseBody?nodeType=1",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testRequestParamAndResponseBody",
+          "query": [
+            {
+              "key": "nodeType",
+              "value": "1"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=UTF-8",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"a\":\"1\",\"b\":\"2\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testGet",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testGet?id=100&name=hello",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testGet",
+          "query": [
+            {
+              "key": "id",
+              "value": "100"
+            },
+            {
+              "key": "name",
+              "value": "hello"
+            }
+          ]
+        },
+        "header": [],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testPut",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testPut",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testPut",
+          "query": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=UTF-8",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"key\":\"updatedValue\",\"status\":\"active\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testDelete",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testDelete/123",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testDelete/123",
+          "query": []
+        },
+        "header": [
+          {
+            "key": "content-length",
+            "value": "0",
+            "disabled": false
+          }
+        ],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testHead",
+      "request": {
+        "method": "HEAD",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testHead",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testHead",
+          "query": []
+        },
+        "header": [],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testOptions",
+      "request": {
+        "method": "OPTIONS",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testOptions",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testOptions",
+          "query": []
+        },
+        "header": [],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testTrace",
+      "request": {
+        "method": "TRACE",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testTrace",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testTrace",
+          "query": []
+        },
+        "header": [],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testPatch",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testPatch",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testPatch",
+          "query": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json; charset=UTF-8",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"field\":\"partialUpdate\",\"status\":\"active\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testDownload",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testDownload?nodeType=1",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testDownload",
+          "query": [
+            {
+              "key": "nodeType",
+              "value": "1"
+            }
+          ]
+        },
+        "header": [],
+        "body": null,
+        "auth": null
+      }
+    },
+    {
+      "name": "httpTest-testFormUrlencoded",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:28893/porttrailhostdemo/httpTest/testFormUrlencoded",
+          "host": [
+            "localhost"
+          ],
+          "protocol": "http",
+          "path": "/porttrailhostdemo/httpTest/testFormUrlencoded",
+          "query": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded; charset=UTF-8",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "nodeType",
+              "value": "123",
+              "type": "text",
+              "disabled": false
+            },
+            {
+              "key": "f1",
+              "value": "测试表单数据",
+              "type": "text",
+              "disabled": false
+            }
+          ]
+        },
+        "auth": null
+      }
+    }
+  ]
+}

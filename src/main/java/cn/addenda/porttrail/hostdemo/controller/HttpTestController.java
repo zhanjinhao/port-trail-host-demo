@@ -27,6 +27,7 @@ public class HttpTestController {
 
   @PostMapping("testOnlyRequestParam")
   public Map<String, String> testOnlyRequestParam(@RequestParam("nodeType") String nodeType) {
+    demoService.update(nodeType);
 
     Map<String, String> map = new HashMap<>();
     map.put("testOnlyRequestParam", nodeType);
@@ -36,6 +37,7 @@ public class HttpTestController {
   @PostMapping("testRequestParamAndResponseBody")
   public Map<String, String> testRequestParamAndResponseBody(@RequestParam("nodeType") String nodeType, @RequestBody Map<String, String> postParam) {
     System.out.println(postParam);
+    demoService.update(nodeType);
     Map<String, String> map = new HashMap<>();
     map.put("testRequestParamAndResponseBody", nodeType);
     map.putAll(postParam);
@@ -122,7 +124,7 @@ public class HttpTestController {
     String fileLocation = "static/" + fileName;
 
     try {
-      URL resource = DemoController.class.getClassLoader().getResource(fileLocation);
+      URL resource = HttpTestController.class.getClassLoader().getResource(fileLocation);
       if (resource == null) {
         throw new IllegalArgumentException(String.format("文件[%s]不存在", fileName));
       }
@@ -176,7 +178,7 @@ public class HttpTestController {
     System.out.println("file=" + file.getName() + ",filename=" + file.getOriginalFilename() + ",size=" + file.getSize());
     // 将文件写入 target 目录
     try {
-      File targetDir = new File(DemoController.class.getClassLoader().getResource("").toURI().getPath()).getParentFile();
+      File targetDir = new File(HttpTestController.class.getClassLoader().getResource("").toURI().getPath()).getParentFile();
       File dest = new File(targetDir, UUID.randomUUID().toString().replace("-", "") + "_" + file.getOriginalFilename());
       dest.createNewFile();
       InputStream inputStream = file.getInputStream();
@@ -216,7 +218,7 @@ public class HttpTestController {
   @PostMapping(value = "testFormUrlencoded", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
   public Map<String, String> testFormUrlencoded(@RequestParam("nodeType") Integer nodeType, @RequestParam("f1") String f1) {
     System.out.println("f1=" + f1);
-//    demoService.update("" + nodeType);
+    demoService.update("" + nodeType);
     Map<String, String> map = new HashMap<>();
     map.put("nodeType", String.valueOf(nodeType));
     map.put("f1", f1);

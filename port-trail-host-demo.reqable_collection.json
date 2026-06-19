@@ -1,0 +1,868 @@
+{
+  "version": "3.0",
+  "info": "Reqable Collection APIs",
+  "type": "collection",
+  "id": "b361bfca-5d14-494a-b3a7-1960aa384f68",
+  "items": [
+    {
+      "id": "d1a81156-c071-48e6-886d-45c5bc807b64",
+      "type": "api",
+      "name": "httpTest-testOnlyRequestParam",
+      "method": "POST",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testOnlyRequestParam",
+        "query": [
+          {
+            "key": "nodeType",
+            "value": "1"
+          }
+        ]
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        },
+        {
+          "key": "Content-Length",
+          "value": "0"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=UTF-8"
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "93f9867d-da2e-4414-b759-4f9ffe2abcee",
+      "type": "api",
+      "name": "httpTest-testRequestParamAndResponseBody",
+      "method": "POST",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testRequestParamAndResponseBody",
+        "query": [
+          {
+            "key": "nodeType",
+            "value": "1"
+          }
+        ]
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "internal": true
+        },
+        {
+          "key": "Content-Length",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=UTF-8"
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "json",
+        "text": "{\"a\":\"1\",\"b\":\"2\"}"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "b2087462-df15-4a83-a0ba-ddd4afed0466",
+      "type": "api",
+      "name": "httpTest-testGet",
+      "method": "GET",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testGet",
+        "query": [
+          {
+            "key": "id",
+            "value": "100"
+          },
+          {
+            "key": "name",
+            "value": "hello"
+          }
+        ]
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "0f93155a-41b9-41f0-90fc-cdffb0ae5968",
+      "type": "api",
+      "name": "httpTest-testPut",
+      "method": "PUT",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testPut"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "internal": true
+        },
+        {
+          "key": "Content-Length",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=UTF-8"
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "json",
+        "text": "{\"key\":\"updatedValue\",\"status\":\"active\"}"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "9da4ef7f-8a95-45c7-bd28-62bdbabd53a9",
+      "type": "api",
+      "name": "httpTest-testDelete",
+      "method": "DELETE",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testDelete/123"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        },
+        {
+          "key": "content-length",
+          "value": "0"
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "fdeb5285-6665-4326-bdc8-7410db06833e",
+      "type": "api",
+      "name": "httpTest-testHead",
+      "method": "HEAD",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testHead"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "f26e213c-4644-4879-b441-b2aadb7cd0d0",
+      "type": "api",
+      "name": "httpTest-testOptions",
+      "method": "OPTIONS",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testOptions"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "158575b4-ef5e-47af-8db6-0e970b12dae3",
+      "type": "api",
+      "name": "httpTest-testTrace",
+      "method": "TRACE",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testTrace"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "0dca0329-0d22-4caf-a08a-82a8405e4ec5",
+      "type": "api",
+      "name": "httpTest-testPatch",
+      "method": "PATCH",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testPatch"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "internal": true
+        },
+        {
+          "key": "Content-Length",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=UTF-8"
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "json",
+        "text": "{\"field\":\"partialUpdate\",\"status\":\"active\"}"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "970fc85d-8b3d-4ab0-a10a-479d4cbd3cbb",
+      "type": "api",
+      "name": "httpTest-testDownload",
+      "method": "GET",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testDownload",
+        "query": [
+          {
+            "key": "nodeType",
+            "value": "1"
+          }
+        ]
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "none"
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    },
+    {
+      "id": "f6a66836-44cb-479d-8668-bbe63a70cd2e",
+      "type": "api",
+      "name": "httpTest-testFormUrlencoded",
+      "method": "POST",
+      "url": {
+        "base": "http://localhost:28893/porttrailhostdemo/httpTest/testFormUrlencoded"
+      },
+      "headers": [
+        {
+          "key": "Reqable-Id",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Host",
+          "value": "localhost:28893",
+          "internal": true
+        },
+        {
+          "key": "User-Agent",
+          "value": "Apache-HttpClient/4.5.14 (Java/1.8.0_311)",
+          "internal": true
+        },
+        {
+          "key": "Connection",
+          "value": "Keep-Alive",
+          "internal": true
+        },
+        {
+          "key": "Accept",
+          "value": "*/*",
+          "internal": true
+        },
+        {
+          "key": "Accept-Encoding",
+          "value": "gzip,deflate",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "internal": true
+        },
+        {
+          "key": "Content-Length",
+          "value": "",
+          "internal": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/x-www-form-urlencoded; charset=UTF-8"
+        }
+      ],
+      "showInternalHeaders": true,
+      "body": {
+        "mode": "urlencode",
+        "urlencodes": [
+          {
+            "key": "nodeType",
+            "value": "123"
+          },
+          {
+            "key": "f1",
+            "value": "测试表单数据"
+          }
+        ]
+      },
+      "script": {
+        "script": null,
+        "wordWrap": true,
+        "isEnabled": false
+      },
+      "authorization": {
+        "mode": "inherit"
+      },
+      "settings": {
+        "protocol": 0,
+        "proxy": {
+          "type": "unset",
+          "value": ""
+        },
+        "maxRedirect": 10,
+        "autoSave": true,
+        "autoCookie": true,
+        "autoId": true,
+        "sslVerify": true,
+        "omitEqualSign": true,
+        "urlAutocomplete": true
+      }
+    }
+  ],
+  "properties": {
+    "name": "port-trail-host-demo",
+    "query": [],
+    "headers": [],
+    "script": {
+      "script": null,
+      "wordWrap": true,
+      "isEnabled": false
+    },
+    "authorization": {
+      "mode": "none"
+    }
+  },
+  "revision": -1
+}
