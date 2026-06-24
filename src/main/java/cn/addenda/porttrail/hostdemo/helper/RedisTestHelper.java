@@ -10,45 +10,10 @@ import java.util.Map;
 
 @Slf4j
 @Service
-public class RedisHelper {
+public class RedisTestHelper {
 
   @Resource
   private StatefulRedisClusterConnection<String, String> clusterConnection;
-
-  public void set(String key, String value) {
-    try {
-      RedisClusterCommands<String, String> sync = clusterConnection.sync();
-      String set = sync.set(key, value);
-      log.info("SET key={}, value={}, result={}", key, value, set);
-    } catch (Exception e) {
-      log.error("SET command failed, key={}", key, e);
-      throw new RuntimeException("Redis SET operation failed", e);
-    }
-  }
-
-  public String get(String key) {
-    try {
-      RedisClusterCommands<String, String> sync = clusterConnection.sync();
-      String value = sync.get(key);
-      log.info("GET key={}, value={}", key, value);
-      return value;
-    } catch (Exception e) {
-      log.error("GET command failed, key={}", key, e);
-      throw new RuntimeException("Redis GET operation failed", e);
-    }
-  }
-
-  public Long del(String... keys) {
-    try {
-      RedisClusterCommands<String, String> sync = clusterConnection.sync();
-      Long deletedCount = sync.del(keys);
-      log.info("DEL keys={}, deletedCount={}", String.join(",", keys), deletedCount);
-      return deletedCount;
-    } catch (Exception e) {
-      log.error("DEL command failed, keys={}", String.join(",", keys), e);
-      throw new RuntimeException("Redis DEL operation failed", e);
-    }
-  }
 
   public void hset(String key, String field, String value) {
     try {

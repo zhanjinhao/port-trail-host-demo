@@ -14,33 +14,6 @@ public class RedisTestController {
   @Autowired
   private RedisTestService redisTestService;
 
-  @PostMapping("testSet")
-  public Map<String, String> testSet(@RequestParam("key") String key,
-                                     @RequestParam("value") String value) {
-    redisTestService.set(key, value);
-    Map<String, String> map = new HashMap<>();
-    map.put("key", key);
-    map.put("value", value);
-    return map;
-  }
-
-  @PostMapping("testGet")
-  public Map<String, String> testSet(@RequestParam("key") String key) {
-    String value = redisTestService.get(key);
-    Map<String, String> map = new HashMap<>();
-    map.put("key", key);
-    map.put("value", value);
-    return map;
-  }
-
-  @PostMapping("testDel")
-  public Map<String, String> testDel(@RequestParam("key") String key) {
-    redisTestService.del(key);
-    Map<String, String> map = new HashMap<>();
-    map.put("key", key);
-    return map;
-  }
-
   @PostMapping("testHset")
   public Map<String, String> testHset(@RequestParam("key") String key,
                                       @RequestParam("field") String field,
