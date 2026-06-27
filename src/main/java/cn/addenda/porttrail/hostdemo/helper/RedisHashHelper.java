@@ -310,40 +310,6 @@ public class RedisHashHelper {
   // ==================== 迭代扫描 ====================
 
   /**
-   * 增量迭代扫描 Hash，从游标 0 开始
-   * Redis HSCAN 命令，适用于大 Hash 的遍历，不会阻塞
-   */
-  public MapScanCursor<String, String> hscan(String key) {
-    try {
-      RedisClusterCommands<String, String> sync = clusterConnection.sync();
-      io.lettuce.core.ScanCursor cursor = new io.lettuce.core.ScanCursor("0", false);
-      MapScanCursor<String, String> result = sync.hscan(key, cursor);
-      log.info("HSCAN key={}, cursor={}, size={}", key, result.getCursor(), result.getMap().size());
-      return result;
-    } catch (Exception e) {
-      log.error("HSCAN command failed, key={}", key, e);
-      throw new RuntimeException("Redis HSCAN operation failed", e);
-    }
-  }
-
-  /**
-   * 增量迭代扫描 Hash（自定义 ScanArgs），从游标 0 开始
-   * Redis HSCAN 命令，适用于大 Hash 的遍历
-   */
-  public MapScanCursor<String, String> hscan(String key, ScanArgs scanArgs) {
-    try {
-      RedisClusterCommands<String, String> sync = clusterConnection.sync();
-      io.lettuce.core.ScanCursor cursor = new io.lettuce.core.ScanCursor("0", false);
-      MapScanCursor<String, String> result = sync.hscan(key, cursor, scanArgs);
-      log.info("HSCAN key={}, cursor={}, size={}", key, result.getCursor(), result.getMap().size());
-      return result;
-    } catch (Exception e) {
-      log.error("HSCAN command failed, key={}", key, e);
-      throw new RuntimeException("Redis HSCAN operation failed", e);
-    }
-  }
-
-  /**
    * 从指定游标开始增量迭代扫描 Hash，支持分页大小和 pattern 匹配
    * Redis HSCAN 命令
    *
@@ -359,7 +325,7 @@ public class RedisHashHelper {
       if (match != null && !match.isEmpty()) {
         scanArgs = scanArgs.match(match);
       }
-      io.lettuce.core.ScanCursor scanCursor = new io.lettuce.core.ScanCursor(cursor, false);
+      io.lettuce.core.ScanCursor scanCursor = io.lettuce.core.ScanCursor.of(cursor);
       MapScanCursor<String, String> result = sync.hscan(key, scanCursor, scanArgs);
       log.info("HSCAN key={}, cursor={}, count={}, match={}, resultCursor={}, size={}",
           key, cursor, count, match, result.getCursor(), result.getMap().size());

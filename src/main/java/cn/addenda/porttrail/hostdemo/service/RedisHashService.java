@@ -84,14 +84,6 @@ public class RedisHashService {
     return redisHashHelper.hrandfieldWithValues(key, count);
   }
 
-  public MapScanCursor<String, String> hscan(String key) {
-    return redisHashHelper.hscan(key);
-  }
-
-  public MapScanCursor<String, String> hscan(String key, ScanArgs scanArgs) {
-    return redisHashHelper.hscan(key, scanArgs);
-  }
-
   public MapScanCursor<String, String> hscan(String key, String cursor, long count, String match) {
     return redisHashHelper.hscan(key, cursor, count, match);
   }
